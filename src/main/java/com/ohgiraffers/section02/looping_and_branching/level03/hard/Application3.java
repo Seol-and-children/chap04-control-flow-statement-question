@@ -1,9 +1,29 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+
 public class Application3 {
 
 	public static void main(String[] args) {
-		
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("문자열! 입력혀:");
+		String str = sc.nextLine();
+		sc.nextLine();
+
+		System.out.println("검색할 문자를 입력하셔유:");
+		String ch1 = sc.nextLine();
+		char ch = ch1.charAt(0);
+		int count = 0;
+
+		for( char x : str.toCharArray()){
+			if( x < 65  || x > 122 ){
+				System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
+			} else if ( x == ch ) {
+				count++;
+			}
+		}
+		System.out.println("포함된 갯수 :" + count);
 		/* 문자열을 하나 입력 받고, 검색할 문자를 입력 하여
 		 * 입력받은 문자열에서 검색할 문자가 몇 개 포함되어 있는지를 출력하는 프로그램을 만드세요
 		 * 
@@ -30,7 +50,7 @@ public class Application3 {
 		 * -- 출력 예시 --
 		 * 영문자가 아닌 문자가 포함되어 있습니다.
 		 * */
-		
+
 	}
 
 }
