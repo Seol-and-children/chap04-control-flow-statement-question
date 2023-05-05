@@ -1,5 +1,7 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+
 public class Application1 {
 
 	public static void main(String[] args) {
@@ -20,7 +22,19 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * 소수다.
 		 * */
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("2보다 큰 정수를 입력하세요 : ");
+		int main = sc.nextInt();
+		int cnt = 0;
+		for (int i=2;i<=main;i++){
+			if(main>=2) {
+				if(main%i==0) cnt++;
+
+			}
+			else System.out.print("잘못 입력하셨습니다. 다시 입력하세요.");
+		}
+		if(cnt==1)System.out.print("소수다");
+		else if(cnt>1)System.out.print("소수가 아니다");
 	}
 
 }
