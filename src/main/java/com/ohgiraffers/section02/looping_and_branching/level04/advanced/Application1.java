@@ -1,10 +1,45 @@
 package com.ohgiraffers.section02.looping_and_branching.level04.advanced;
 
-public class Application1 {
-	
+import java.util.Scanner;
+
+public class    Application1 {
+
 	public static void main(String[] args) {
-		
-		/* 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열을 입력하세요 :");
+		String str = sc.nextLine();
+
+		System.out.print("숫자를 입력하세욧 :");
+		int a = sc.nextInt();
+		if( a > 26) a = a -26;
+		String result = "";
+
+		for(int i = 0; i< str.length(); i++){
+			char ch = str.charAt(i);
+			if( ch == ' ' ) {
+				System.out.println(" ");
+			} else if ( ch >= 'a' && ch <= 'z' ) {
+				ch = (char) ( ch + a );
+				if( ch > 'z') {
+					ch = (char) (ch - 26);
+				}
+			} else if ( ch >= 'A' && ch <= 'Z') {
+				ch = (char) ( ch + a );
+				if( ch > 'z') {
+					ch = (char) (ch - 26);
+				} else if (ch > 'Z') {
+					ch = (char) ( ch + a );
+				}
+			}
+			result += ch;
+		}
+		System.out.println(result);
+	}
+
+
+
+	/* 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서
 		 * 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다.
 		 * 
 		 * A를 3만큼 밀면 D가 되고, z를 1만큼 밀면 a가 됩니다.
@@ -17,7 +52,7 @@ public class Application1 {
 		 * -- 입력 예시 --
 		 * 문자열을 입력하세요 : a B z
 		 * 숫자를 입력하세요 : 4
-		 * 
+		 *
 		 * -- 출력 예시 --
 		 * e F d
 		 * 
@@ -28,7 +63,6 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * b C a
 		 * */
-		
-	}
-	
+
 }
+

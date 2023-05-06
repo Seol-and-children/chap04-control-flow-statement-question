@@ -1,10 +1,38 @@
 package com.ohgiraffers.section01.conditional.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application1 {
 
 	public static void main(String[] args) {
-		
-		/* 국어, 영어, 수학 점수를 입력받아 
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("국어 점수 :");
+		int kuk = sc.nextInt();
+		sc.nextLine();
+
+		System.out.print("영어 점수 :");
+		int en = sc.nextInt();
+		sc.nextLine();
+
+		System.out.print("수학 점수 :");
+		int ma = sc.nextInt();
+		sc.nextLine();
+
+		int avg = ( kuk + en + ma ) / 3;
+		if( avg >= 60 && kuk >= 40 && en >= 40 && ma >= 40 ){
+			System.out.println("합.격.");
+		} else if( avg < 60 ){
+			System.out.println("평균점수 미달 불.합.격.");
+		} else if ( kuk < 40 ) {
+			System.out.println("국어 과목의 점수 미달 불.합.격.");
+		} else if ( en < 40 ) {
+			System.out.println("영어 과목의 점수 미달 불.합.격.");
+		} else if ( ma < 40 ) {
+			System.out.println("수학 과목의 점수 미달 불.합.격.");
+		}
+
+		/* 국어, 영어, 수학 점수를 입력받아
 		 * 평균 점수가 60점 이상이면서 각 과목이 40점 이상인 조건이 만족하면 "합격입니다!" 를 출력하세요,
 		 * 단, 합격이 아닌 경우 불합격 사유가 무엇인지를 모두 출력해주어야 합니다.
 		 * 평균점수 미달인 경우 "평균점수 미달로 불합격입니다." 라고 출력하고,
@@ -20,7 +48,7 @@ public class Application1 {
 		 * 영어 점수 미달로 불합격입니다.
 		 * 수학 점수 미달로 불합격입니다.
 		 * */
-		
+
 	}
 
 }
